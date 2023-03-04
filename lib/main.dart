@@ -1,4 +1,7 @@
+import 'package:clump_task/routes/pages.dart';
+import 'package:clump_task/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -12,10 +15,10 @@ class ClumpApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return Container(
-          width: 100.w,
-          height: 100.h,
-          color: Colors.green,
+        return GetMaterialApp(
+          title: 'Clump',
+          initialRoute: Routes.splash,
+          getPages: pages,
         );
       },
     );
