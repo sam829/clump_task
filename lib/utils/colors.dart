@@ -2,10 +2,11 @@ import 'package:flutter/widgets.dart';
 
 class ClumpColors {
   static final Color primaryColor = '#60A053'.toColor();
+  static final Color hintColor = '#A4A4A4'.toColor();
 }
 
 extension ColorExtension on String {
-  toColor() {
+  Color toColor() {
     final buffer = StringBuffer();
     if (length == 6 || length == 7) buffer.write('ff');
     buffer.write(replaceFirst('#', ''));
