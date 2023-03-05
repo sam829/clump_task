@@ -99,7 +99,9 @@ class LogInScreen extends StatelessWidget {
                       child: const TextField(
                         decoration: InputDecoration(
                           hintText: 'Email',
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                         ),
                       ),
                     ),
@@ -111,7 +113,9 @@ class LogInScreen extends StatelessWidget {
                       ),
                       child: const TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                           hintText: 'Password',
                         ),
                       ),
