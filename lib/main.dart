@@ -1,6 +1,7 @@
 import 'package:clump_task/routes/pages.dart';
 import 'package:clump_task/routes/routes.dart';
 import 'package:clump_task/utils/colors.dart';
+import 'package:clump_task/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -17,7 +18,7 @@ class ClumpApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
-          title: 'Clump',
+          title: Strings.appName,
           initialRoute: Routes.logIn,
           theme: ThemeData(
             primaryColor: ClumpColors.primaryColor,

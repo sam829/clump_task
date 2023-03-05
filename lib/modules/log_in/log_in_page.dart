@@ -1,6 +1,7 @@
 import 'package:clump_task/modules/components/background.dart';
 import 'package:clump_task/modules/components/card.dart';
 import 'package:clump_task/utils/colors.dart';
+import 'package:clump_task/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,7 +29,7 @@ class LogInScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: (5.6).w, top: (6.8).h),
                     child: Text(
-                      'Login',
+                      Strings.logIn,
                       style: GoogleFonts.roboto(
                         fontSize: 30,
                         letterSpacing: 1.5,
@@ -39,7 +40,7 @@ class LogInScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 6.w, top: (1.6).h),
                     child: Text(
-                      'Welcome Back',
+                      Strings.welcomeBack,
                       style: GoogleFonts.roboto(
                         fontSize: 15.00,
                         color: Colors.white,
@@ -58,7 +59,7 @@ class LogInScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Don't have an account? ",
+                          Strings.dontHaveAnAccount,
                           style: GoogleFonts.roboto(
                             fontSize: 15,
                             letterSpacing: 0.75,
@@ -66,7 +67,7 @@ class LogInScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Sign Up',
+                          Strings.signUp,
                           style: GoogleFonts.roboto(
                             fontSize: 15,
                             letterSpacing: 0.75,
@@ -98,7 +99,7 @@ class LogInScreen extends StatelessWidget {
                       ),
                       child: const TextField(
                         decoration: InputDecoration(
-                          hintText: 'Email',
+                          hintText: Strings.emailHint,
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
@@ -116,7 +117,7 @@ class LogInScreen extends StatelessWidget {
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
-                          hintText: 'Password',
+                          hintText: Strings.passwordHint,
                         ),
                       ),
                     ),
@@ -130,7 +131,7 @@ class LogInScreen extends StatelessWidget {
                           elevation: 0.0,
                         ),
                         child: const Text(
-                          'Login',
+                          Strings.logIn,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
@@ -141,7 +142,7 @@ class LogInScreen extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {},
                         child: Text(
-                          'Forgot Password?',
+                          Strings.forgotPassword,
                           style: GoogleFonts.roboto(
                             fontSize: 16,
                             letterSpacing: 0.8,

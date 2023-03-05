@@ -1,6 +1,7 @@
 import 'package:clump_task/modules/components/background.dart';
 import 'package:clump_task/modules/components/card.dart';
 import 'package:clump_task/utils/colors.dart';
+import 'package:clump_task/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -21,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: (5.6).w, top: (6.8).h),
                   child: Text(
-                    'Signup',
+                    Strings.signUp,
                     style: GoogleFonts.roboto(
                       fontSize: 30,
                       letterSpacing: 1.5,
@@ -32,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 6.w, top: (1.6).h),
                   child: Text(
-                    'Enter you details to create account',
+                    Strings.enterYourAccountDetails,
                     style: GoogleFonts.roboto(
                       fontSize: 15.00,
                       color: Colors.white,
@@ -64,7 +65,7 @@ class SignUpScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: 'Full Name',
+                            hintText: Strings.fullNameHint,
                           ),
                         ),
                       ),
@@ -79,7 +80,7 @@ class SignUpScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: 'Contact No',
+                            hintText: Strings.contactNo,
                           ),
                         ),
                       ),
@@ -94,7 +95,7 @@ class SignUpScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: 'Email',
+                            hintText: Strings.emailHint,
                           ),
                         ),
                       ),
@@ -109,7 +110,7 @@ class SignUpScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: 'Password',
+                            hintText: Strings.passwordHint,
                           ),
                         ),
                       ),
@@ -124,7 +125,7 @@ class SignUpScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
-                            hintText: 'Confirm Password',
+                            hintText: Strings.confirmPasswordHint,
                           ),
                         ),
                       ),
@@ -139,7 +140,7 @@ class SignUpScreen extends StatelessWidget {
                                 backgroundColor: ClumpColors.primaryColor,
                               ),
                               child: const Text(
-                                'Next',
+                                Strings.next,
                                 style: TextStyle(fontSize: 18),
                               ),
                             ),
@@ -150,7 +151,7 @@ class SignUpScreen extends StatelessWidget {
                                 style: TextButton.styleFrom(
                                     foregroundColor: ClumpColors.primaryColor),
                                 child: const Text(
-                                  'Cancel',
+                                  Strings.cancel,
                                   style: TextStyle(fontSize: 18),
                                 ),
                               ),
