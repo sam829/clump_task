@@ -1,3 +1,4 @@
+import 'package:clump_task/modules/log_in/log_in_binding.dart';
 import 'package:clump_task/modules/log_in/log_in_page.dart';
 import 'package:clump_task/modules/sign_up/sign_up_page.dart';
 import 'package:clump_task/modules/splash/splash.dart';
@@ -12,6 +13,7 @@ final List<GetPage> pages = [
   GetPage(
     name: Routes.logIn,
     page: () => const LogInScreen(),
+    binding: LogInBindings(),
   ),
   GetPage(
     name: Routes.signUp,

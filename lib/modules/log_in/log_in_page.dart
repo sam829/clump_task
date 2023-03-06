@@ -1,13 +1,15 @@
 import 'package:clump_task/modules/components/background.dart';
 import 'package:clump_task/modules/components/card.dart';
+import 'package:clump_task/modules/log_in/log_in_controller.dart';
 import 'package:clump_task/utils/colors.dart';
 import 'package:clump_task/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-class LogInScreen extends StatelessWidget {
+class LogInScreen extends GetView<LogInController> {
   const LogInScreen({super.key});
 
   @override
@@ -85,73 +87,88 @@ class LogInScreen extends StatelessWidget {
             Align(
                 child: SizedBox(
               width: 89.w,
-              height: 42.h,
+              height: 50.h,
               child: ClumpCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 5.w,
-                        right: 5.w,
-                        top: 4.h,
-                        bottom: 2.h,
-                      ),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          hintText: Strings.emailHint,
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                child: Form(
+                  key: controller.formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 5.w,
+                          right: 5.w,
+                          top: 4.h,
+                          bottom: 2.h,
+                        ),
+                        child: TextFormField(
+                          controller: controller.emailController,
+                          validator: controller.validateEmail,
+                          decoration: const InputDecoration(
+                            hintText: Strings.emailHint,
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                          ),
+                          textInputAction: TextInputAction.next,
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 5.w,
-                        right: 5.w,
-                        bottom: 5.h,
-                      ),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          hintText: Strings.passwordHint,
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 5.w,
+                          right: 5.w,
+                          bottom: 5.h,
+                        ),
+                        child: TextFormField(
+                          controller: controller.passwordController,
+                          validator: controller.validatePassword,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            hintText: Strings.passwordHint,
+                          ),
+                          textInputAction: TextInputAction.done,
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5.w),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: ClumpColors.primaryColor,
-                          minimumSize: Size.fromHeight(7.h),
-                          elevation: 0.0,
-                        ),
-                        child: const Text(
-                          Strings.logIn,
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 5.w, right: 5.w, top: 2.h, bottom: 3.h),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          Strings.forgotPassword,
-                          style: GoogleFonts.roboto(
-                            fontSize: 16,
-                            letterSpacing: 0.8,
-                            color: ClumpColors.hintColor,
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 5.w),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            controller.logIn(() {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Logging you in....')));
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: ClumpColors.primaryColor,
+                            minimumSize: Size.fromHeight(7.h),
+                            elevation: 0.0,
+                          ),
+                          child: const Text(
+                            Strings.logIn,
+                            style: TextStyle(fontSize: 18),
                           ),
                         ),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 5.w, right: 5.w, top: 2.h, bottom: 3.h),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            Strings.forgotPassword,
+                            style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              letterSpacing: 0.8,
+                              color: ClumpColors.hintColor,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ))
